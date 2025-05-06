@@ -1,5 +1,6 @@
 name: Deploy to GitHub Pages
 
+# Updated workflow for GitHub Pages
 on:
   push:
     branches: [ main ]
@@ -12,19 +13,20 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
       
       - name: Install dependencies
         run: |
@@ -33,10 +35,19 @@ jobs:
 
       - name: Generate static files
         run: |
+          # Print Python version
+          python --version
+          
+          # Create site directory
           mkdir -p _site
           cp -r static _site/
           cp -r data _site/
+          
+          # Run build script
+          echo "Running build_static.py..."
           python build_static.py
+          
+          # Create GitHub Pages specific files
           touch .nojekyll
           cp .nojekyll _site/
           [ -f static/CNAME ] && cp static/CNAME _site/ || echo "No CNAME file found"
@@ -45,12 +56,16 @@ jobs:
           if [ ! -f _site/404.html ]; then
             cp _site/static/404.html _site/404.html || echo "No 404.html file to copy"
           fi
+          
+          # List the generated files
+          echo "Site directory structure:"
+          find _site -type f | sort
       
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
       
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
   
@@ -63,4 +78,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
