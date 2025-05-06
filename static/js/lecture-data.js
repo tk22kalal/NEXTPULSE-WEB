@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
         
-        // Load each of the JSON data files
+        console.log('Loading data files from base path:', basePath);
+        
+        // Load each of the JSON data files with absolute paths
         const platformsResponse = await fetch(`${basePath}/data/platforms.json`);
         const subjectsResponse = await fetch(`${basePath}/data/subjects.json`);
         const lecturesResponse = await fetch(`${basePath}/data/lectures.json`);

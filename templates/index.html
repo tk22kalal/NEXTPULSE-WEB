@@ -30,9 +30,15 @@
                 {% endif %}
                 <h3 class="card-title">{{ platform.name }}</h3>
                 <p class="card-text text-muted">{{ platform.description }}</p>
+                {% if request.url_rule %}
                 <a href="{{ url_for('subjects', platform=platform.id) }}" class="btn btn-outline-primary mt-3">
                     <i class="fas fa-arrow-right me-1"></i> Select Platform
                 </a>
+                {% else %}
+                <a href="./{{ platform.id }}/" class="btn btn-outline-primary mt-3">
+                    <i class="fas fa-arrow-right me-1"></i> Select Platform
+                </a>
+                {% endif %}
             </div>
             <div class="card-footer text-muted">
                 <small>{{ platform.features }} features</small>

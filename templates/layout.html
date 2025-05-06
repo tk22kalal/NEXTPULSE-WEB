@@ -102,9 +102,10 @@
     {% block extra_js %}{% endblock %}
     
     {% if not request.url_rule %}
-    <!-- GitHub Pages router script (only used in static deployment) -->
+    <!-- GitHub Pages scripts (only used in static deployment) -->
     <script src="static/js/lecture-data.js"></script>
     <script src="static/js/github-pages-router.js"></script>
+    <script src="static/js/github-pages-debug.js"></script>
     {% endif %}
 </body>
 </html>
