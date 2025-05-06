@@ -1,0 +1,132 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ subject.name }} Lectures - {{ platform|capitalize }}{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ url_for('subjects', platform=platform) }}">Subjects</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ subject.name }}</li>
+    </ol>
+</nav>
+
+<div class="d-flex justify-content-between align-items-center mb-4 page-header">
+    <div>
+        <h1>{{ subject.name }}</h1>
+        <p class="text-muted">{{ platform|capitalize }} - {{ subject.description }}</p>
+    </div>
+    <div class="d-flex">
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-search"></i></span>
+            <input type="text" id="searchInput" class="form-control" placeholder="Search lectures...">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Available Lectures</h5>
+                <span class="badge bg-info">{{ lectures|length }} lectures</span>
+            </div>
+            <ul class="list-group list-group-flush lecture-list">
+                {% for lecture in lectures %}
+                <li class="list-group-item lecture-item d-flex justify-content-between align-items-center" data-lecture-id="{{ lecture.id }}">
+                    <div>
+                        <h6 class="mb-1">{{ lecture.title }}</h6>
+                        <p class="text-muted small mb-0">
+                            <i class="fas fa-user-md me-1"></i> {{ lecture.instructor }}
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-clock me-1"></i> {{ lecture.duration }}
+                        </p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="badge bg-success me-2 watched-badge" style="display: none;" data-lecture-id="{{ lecture.id }}">
+                            <i class="fas fa-check me-1"></i> Watched
+                        </span>
+                        <a href="{{ url_for('player', platform=platform, subject_id=subject.id, lecture_id=lecture.id) }}" class="btn btn-sm btn-primary">
+                            <i class="fas fa-play me-1"></i> Watch
+                        </a>
+                    </div>
+                </li>
+                {% else %}
+                <li class="list-group-item text-center py-5">
+                    <i class="fas fa-folder-open fa-3x text-muted mb-3"></i>
+                    <p>No lectures available for this subject yet.</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Subject Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    {% if subject.category == 'pre-clinical' %}
+                        <i class="fas fa-microscope fa-3x text-info me-3"></i>
+                    {% elif subject.category == 'para-clinical' %}
+                        <i class="fas fa-flask fa-3x text-warning me-3"></i>
+                    {% elif subject.category == 'clinical' %}
+                        <i class="fas fa-heartbeat fa-3x text-danger me-3"></i>
+                    {% else %}
+                        <i class="fas fa-book-medical fa-3x text-success me-3"></i>
+                    {% endif %}
+                    <div>
+                        <h5>{{ subject.name }}</h5>
+                        <p class="text-muted mb-0">{{ subject.category|capitalize }}</p>
+                    </div>
+                </div>
+                <p>{{ subject.description }}</p>
+                <hr>
+                <h6>Key Topics:</h6>
+                <ul class="mb-0">
+                    {% for topic in subject.topics %}
+                    <li>{{ topic }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Study Resources</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex align-items-start mb-3">
+                    <i class="fas fa-book fa-lg text-primary me-3 mt-1"></i>
+                    <div>
+                        <h6>Recommended Textbooks</h6>
+                        <p class="small text-muted mb-0">Important textbooks for thorough understanding</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-start mb-3">
+                    <i class="fas fa-file-pdf fa-lg text-danger me-3 mt-1"></i>
+                    <div>
+                        <h6>PDF Notes</h6>
+                        <p class="small text-muted mb-0">Comprehensive notes for quick revision</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-start">
+                    <i class="fas fa-question-circle fa-lg text-success me-3 mt-1"></i>
+                    <div>
+                        <h6>MCQ Bank</h6>
+                        <p class="small text-muted mb-0">Practice questions for exam preparation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <a href="{{ url_for('subjects', platform=platform) }}" class="btn btn-outline-secondary">
+        <i class="fas fa-arrow-left me-1"></i> Back to Subjects
+    </a>
+</div>
+{% endblock %}

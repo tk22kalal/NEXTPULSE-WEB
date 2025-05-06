@@ -1,0 +1,167 @@
+[
+  {
+    "id": "anat-001",
+    "subject_id": "anatomy",
+    "title": "Upper Limb - Brachial Plexus",
+    "description": "Comprehensive lecture on the anatomy, branches, and clinical significance of the brachial plexus.",
+    "instructor": "Dr. Rajesh Kaushal",
+    "instructor_avatar": "",
+    "duration": "45 min",
+    "video_url": "https://example.com/videos/anatomy/brachial-plexus.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "anat-002",
+    "subject_id": "anatomy",
+    "title": "Neuroanatomy - Circle of Willis",
+    "description": "Detailed discussion on the arterial circle at the base of the brain and its clinical importance.",
+    "instructor": "Dr. Rajesh Kaushal",
+    "instructor_avatar": "",
+    "duration": "38 min",
+    "video_url": "https://example.com/videos/anatomy/circle-of-willis.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "anat-003",
+    "subject_id": "anatomy",
+    "title": "Abdomen - Portal Venous System",
+    "description": "Learn about the portal venous system, its tributaries, and clinical significance in portal hypertension.",
+    "instructor": "Dr. Priya Singh",
+    "instructor_avatar": "",
+    "duration": "52 min",
+    "video_url": "https://example.com/videos/anatomy/portal-venous-system.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "physio-001",
+    "subject_id": "physiology",
+    "title": "Cardiovascular System - Cardiac Cycle",
+    "description": "Detailed explanation of the cardiac cycle, heart sounds, and pressure changes during the cycle.",
+    "instructor": "Dr. Sanjay Mehta",
+    "instructor_avatar": "",
+    "duration": "50 min",
+    "video_url": "https://example.com/videos/physiology/cardiac-cycle.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "physio-002",
+    "subject_id": "physiology",
+    "title": "Respiratory System - Pulmonary Function Tests",
+    "description": "Learn about various pulmonary function tests and their clinical interpretation.",
+    "instructor": "Dr. Sanjay Mehta",
+    "instructor_avatar": "",
+    "duration": "43 min",
+    "video_url": "https://example.com/videos/physiology/pulmonary-function-tests.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "bio-001",
+    "subject_id": "biochemistry",
+    "title": "Enzymes - Kinetics and Inhibition",
+    "description": "Detailed discussion on enzyme kinetics, Michaelis-Menten equation, and types of enzyme inhibition.",
+    "instructor": "Dr. Anita Sharma",
+    "instructor_avatar": "",
+    "duration": "55 min",
+    "video_url": "https://example.com/videos/biochemistry/enzyme-kinetics.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "bio-002",
+    "subject_id": "biochemistry",
+    "title": "Molecular Biology - DNA Replication",
+    "description": "Comprehensive lecture on the process of DNA replication, enzymes involved, and its regulation.",
+    "instructor": "Dr. Anita Sharma",
+    "instructor_avatar": "",
+    "duration": "60 min",
+    "video_url": "https://example.com/videos/biochemistry/dna-replication.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "path-001",
+    "subject_id": "pathology",
+    "title": "Cell Injury and Adaptation",
+    "description": "Lecture on the mechanisms of cell injury, cellular adaptations, and cell death.",
+    "instructor": "Dr. Vikram Desai",
+    "instructor_avatar": "",
+    "duration": "48 min",
+    "video_url": "https://example.com/videos/pathology/cell-injury.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "path-002",
+    "subject_id": "pathology",
+    "title": "Inflammation - Acute and Chronic",
+    "description": "Detailed discussion on the process of inflammation, its types, and resolution.",
+    "instructor": "Dr. Vikram Desai",
+    "instructor_avatar": "",
+    "duration": "57 min",
+    "video_url": "https://example.com/videos/pathology/inflammation.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "micro-001",
+    "subject_id": "microbiology",
+    "title": "Virology - HIV and AIDS",
+    "description": "Comprehensive lecture on HIV virus, its replication, pathogenesis, and clinical aspects of AIDS.",
+    "instructor": "Dr. Neha Gupta",
+    "instructor_avatar": "",
+    "duration": "65 min",
+    "video_url": "https://example.com/videos/microbiology/hiv-aids.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "pharma-001",
+    "subject_id": "pharmacology",
+    "title": "Antimicrobial Drugs - Beta-lactams",
+    "description": "Detailed lecture on beta-lactam antibiotics, their mechanism of action, and clinical uses.",
+    "instructor": "Dr. Rahul Malhotra",
+    "instructor_avatar": "",
+    "duration": "53 min",
+    "video_url": "https://example.com/videos/pharmacology/beta-lactams.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "med-001",
+    "subject_id": "medicine",
+    "title": "Diabetes Mellitus - Diagnosis and Management",
+    "description": "Comprehensive lecture on the diagnosis, classification, and management of diabetes mellitus.",
+    "instructor": "Dr. Anil Kumar",
+    "instructor_avatar": "",
+    "duration": "70 min",
+    "video_url": "https://example.com/videos/medicine/diabetes.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "surgery-001",
+    "subject_id": "surgery",
+    "title": "Acute Abdomen - Approach and Management",
+    "description": "Detailed discussion on the approach to a patient with acute abdomen and surgical management.",
+    "instructor": "Dr. Suresh Patel",
+    "instructor_avatar": "",
+    "duration": "58 min",
+    "video_url": "https://example.com/videos/surgery/acute-abdomen.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "obgyn-001",
+    "subject_id": "obgyn",
+    "title": "Normal Labor and Delivery",
+    "description": "Comprehensive lecture on the mechanisms of normal labor, stages of labor, and management.",
+    "instructor": "Dr. Meena Desai",
+    "instructor_avatar": "",
+    "duration": "63 min",
+    "video_url": "https://example.com/videos/obgyn/normal-labor.mp4",
+    "thumbnail": ""
+  },
+  {
+    "id": "peds-001",
+    "subject_id": "pediatrics",
+    "title": "Neonatal Resuscitation",
+    "description": "Detailed lecture on neonatal resuscitation protocols and management of birth asphyxia.",
+    "instructor": "Dr. Ravi Kumar",
+    "instructor_avatar": "",
+    "duration": "48 min",
+    "video_url": "https://example.com/videos/pediatrics/neonatal-resuscitation.mp4",
+    "thumbnail": ""
+  }
+]

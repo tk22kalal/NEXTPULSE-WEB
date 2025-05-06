@@ -1,0 +1,135 @@
+[
+  {
+    "id": "anatomy",
+    "name": "Anatomy",
+    "description": "Study of the structure of the human body and its parts",
+    "category": "pre-clinical",
+    "topics": ["Gross Anatomy", "Neuroanatomy", "Embryology", "Histology", "Genetics"]
+  },
+  {
+    "id": "physiology",
+    "name": "Physiology",
+    "description": "Study of normal functioning of the human body and its systems",
+    "category": "pre-clinical",
+    "topics": ["Cardiovascular System", "Respiratory System", "Renal Physiology", "Neurophysiology", "Endocrinology"]
+  },
+  {
+    "id": "biochemistry",
+    "name": "Biochemistry",
+    "description": "Study of chemical processes and substances in the human body",
+    "category": "pre-clinical",
+    "topics": ["Enzymes", "Metabolism", "Molecular Biology", "Nutrition", "Clinical Biochemistry"]
+  },
+  {
+    "id": "pathology",
+    "name": "Pathology",
+    "description": "Study of diseases and their causes, processes, development, and consequences",
+    "category": "para-clinical",
+    "topics": ["General Pathology", "Hematology", "Systemic Pathology", "Cytopathology", "Immunopathology"]
+  },
+  {
+    "id": "microbiology",
+    "name": "Microbiology",
+    "description": "Study of microorganisms and their effects on human health",
+    "category": "para-clinical",
+    "topics": ["Bacteriology", "Virology", "Mycology", "Parasitology", "Immunology"]
+  },
+  {
+    "id": "pharmacology",
+    "name": "Pharmacology",
+    "description": "Study of drugs and their effects on living systems",
+    "category": "para-clinical",
+    "topics": ["General Pharmacology", "Autonomic Nervous System", "CNS Pharmacology", "Chemotherapy", "Clinical Pharmacology"]
+  },
+  {
+    "id": "forensic",
+    "name": "Forensic Medicine",
+    "description": "Application of medical knowledge to legal issues",
+    "category": "para-clinical",
+    "topics": ["Medical Jurisprudence", "Toxicology", "Forensic Pathology", "Medical Ethics", "Autopsy"]
+  },
+  {
+    "id": "medicine",
+    "name": "Medicine",
+    "description": "Comprehensive study of diagnosis, treatment and prevention of diseases",
+    "category": "clinical",
+    "topics": ["Cardiovascular Medicine", "Respiratory Medicine", "Gastroenterology", "Neurology", "Infectious Diseases"]
+  },
+  {
+    "id": "surgery",
+    "name": "Surgery",
+    "description": "Study of operative procedures and treatment of diseases and injuries",
+    "category": "clinical",
+    "topics": ["General Surgery", "Gastrointestinal Surgery", "Orthopedics", "Neurosurgery", "Plastic Surgery"]
+  },
+  {
+    "id": "obgyn",
+    "name": "Obstetrics & Gynecology",
+    "description": "Study of female reproductive system, pregnancy and childbirth",
+    "category": "clinical",
+    "topics": ["Obstetrics", "Gynecology", "Infertility", "Gynecological Oncology", "Family Planning"]
+  },
+  {
+    "id": "pediatrics",
+    "name": "Pediatrics",
+    "description": "Medical care of infants, children and adolescents",
+    "category": "clinical",
+    "topics": ["Neonatology", "Growth & Development", "Pediatric Infections", "Pediatric Emergencies", "Congenital Disorders"]
+  },
+  {
+    "id": "psychiatry",
+    "name": "Psychiatry",
+    "description": "Study and treatment of mental disorders",
+    "category": "clinical",
+    "topics": ["Mood Disorders", "Schizophrenia", "Anxiety Disorders", "Child Psychiatry", "Psychopharmacology"]
+  },
+  {
+    "id": "dermatology",
+    "name": "Dermatology",
+    "description": "Study of skin and its diseases",
+    "category": "clinical",
+    "topics": ["Papulosquamous Disorders", "Vesiculobullous Diseases", "Infections", "Sexually Transmitted Diseases", "Pigmentary Disorders"]
+  },
+  {
+    "id": "orthopedics",
+    "name": "Orthopedics",
+    "description": "Diagnosis and treatment of disorders of the musculoskeletal system",
+    "category": "clinical",
+    "topics": ["Fractures", "Joint Disorders", "Spine Disorders", "Pediatric Orthopedics", "Sports Injuries"]
+  },
+  {
+    "id": "radiology",
+    "name": "Radiology",
+    "description": "Use of imaging technologies for diagnosis and treatment",
+    "category": "clinical",
+    "topics": ["X-rays", "CT Scan", "MRI", "Ultrasound", "Nuclear Medicine"]
+  },
+  {
+    "id": "anesthesia",
+    "name": "Anesthesiology",
+    "description": "Study and practice of pain relief during surgery",
+    "category": "clinical",
+    "topics": ["General Anesthesia", "Regional Anesthesia", "Pain Management", "Critical Care", "Preoperative Assessment"]
+  },
+  {
+    "id": "ophthalmology",
+    "name": "Ophthalmology",
+    "description": "Study and treatment of eye disorders",
+    "category": "clinical",
+    "topics": ["Anterior Segment", "Posterior Segment", "Glaucoma", "Refractive Errors", "Ophthalmic Surgery"]
+  },
+  {
+    "id": "ent",
+    "name": "ENT",
+    "description": "Study and treatment of ear, nose and throat disorders",
+    "category": "clinical",
+    "topics": ["Otology", "Rhinology", "Laryngology", "Head & Neck Surgery", "Audiometry"]
+  },
+  {
+    "id": "community",
+    "name": "Community Medicine",
+    "description": "Study of health and disease in populations and communities",
+    "category": "clinical",
+    "topics": ["Epidemiology", "Biostatistics", "Environmental Health", "Nutrition", "Preventive Medicine"]
+  }
+]

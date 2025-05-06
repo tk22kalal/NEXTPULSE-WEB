@@ -1,0 +1,111 @@
+{% extends 'layout.html' %}
+
+{% block title %}NEET-PG Subjects - {{ platform|capitalize }}{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Subjects</li>
+    </ol>
+</nav>
+
+<div class="d-flex justify-content-between align-items-center mb-4 page-header">
+    <div>
+        <h1>MBBS Subjects</h1>
+        <p class="text-muted">{{ platform|capitalize }} - Select a subject to view available lectures</p>
+    </div>
+    <div class="d-flex">
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-search"></i></span>
+            <input type="text" id="searchInput" class="form-control" placeholder="Search subjects...">
+        </div>
+    </div>
+</div>
+
+<div class="row subject-list">
+    {% for subject in subjects %}
+    <div class="col-md-4 col-lg-3 mb-4">
+        <div class="card subject-card h-100">
+            <div class="card-body text-center">
+                <div class="subject-icon my-3">
+                    {% if subject.category == 'pre-clinical' %}
+                        <i class="fas fa-microscope fa-3x text-info"></i>
+                    {% elif subject.category == 'para-clinical' %}
+                        <i class="fas fa-flask fa-3x text-warning"></i>
+                    {% elif subject.category == 'clinical' %}
+                        <i class="fas fa-heartbeat fa-3x text-danger"></i>
+                    {% else %}
+                        <i class="fas fa-book-medical fa-3x text-success"></i>
+                    {% endif %}
+                </div>
+                <h5 class="card-title">{{ subject.name }}</h5>
+                <p class="card-text small text-muted">{{ subject.description }}</p>
+            </div>
+            <div class="card-footer d-grid">
+                <a href="{{ url_for('lectures', platform=platform, subject_id=subject.id) }}" class="btn btn-sm btn-outline-primary">
+                    View Lectures <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="col-12">
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i> No subjects available for this platform.
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card bg-dark">
+            <div class="card-body">
+                <h4>Subject Categories</h4>
+                <div class="row mt-3">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="d-flex align-items-start">
+                            <div class="me-3">
+                                <i class="fas fa-microscope fa-2x text-info"></i>
+                            </div>
+                            <div>
+                                <h5>Pre-clinical Subjects</h5>
+                                <p class="small text-muted">Anatomy, Physiology, Biochemistry</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="d-flex align-items-start">
+                            <div class="me-3">
+                                <i class="fas fa-flask fa-2x text-warning"></i>
+                            </div>
+                            <div>
+                                <h5>Para-clinical Subjects</h5>
+                                <p class="small text-muted">Pathology, Pharmacology, Microbiology</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-start">
+                            <div class="me-3">
+                                <i class="fas fa-heartbeat fa-2x text-danger"></i>
+                            </div>
+                            <div>
+                                <h5>Clinical Subjects</h5>
+                                <p class="small text-muted">Medicine, Surgery, Pediatrics, and more</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+        <i class="fas fa-arrow-left me-1"></i> Back to Platforms
+    </a>
+</div>
+{% endblock %}

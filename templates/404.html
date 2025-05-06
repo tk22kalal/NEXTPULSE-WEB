@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}Page Not Found - NEET-PG Preparation{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center text-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="my-5">
+            <h1 class="display-1">404</h1>
+            <h2 class="mb-4">Page Not Found</h2>
+            <p class="lead mb-5">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+            <a href="{{ url_for('index') }}" class="btn btn-primary">
+                <i class="fas fa-home me-2"></i> Back to Home
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

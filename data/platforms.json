@@ -1,0 +1,23 @@
+[
+  {
+    "id": "marrow",
+    "name": "Marrow",
+    "description": "The leading NEET-PG preparation platform with comprehensive video lectures and question banks.",
+    "logo": "marrow_logo.svg",
+    "features": "Premium QBank, Clinical Cases, Daily MCQs"
+  },
+  {
+    "id": "prepladder",
+    "name": "PrepLadder",
+    "description": "A complete learning platform for NEET-PG aspirants with expert faculty and structured courses.",
+    "logo": "prepladder_logo.svg",
+    "features": "Customized Study Plans, Test Series, Live Classes"
+  },
+  {
+    "id": "dams",
+    "name": "DAMS",
+    "description": "Delhi Academy of Medical Sciences offers quality education for NEET-PG with experienced faculty.",
+    "logo": "dams_logo.svg",
+    "features": "Subject-wise Modules, Doubt Clearing Sessions, Mock Tests"
+  }
+]
