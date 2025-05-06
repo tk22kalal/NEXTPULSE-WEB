@@ -38,6 +38,9 @@ with app.test_request_context():
     not_found_html = render_template('404.html')
     with open(os.path.join('_site', '404.html'), 'w') as f:
         f.write(not_found_html)
+    # Also copy to static directory for reference
+    with open(os.path.join('_site', 'static', '404.html'), 'w') as f:
+        f.write(not_found_html)
     
     # Generate subjects pages for each platform
     for platform in platforms:
@@ -97,6 +100,41 @@ with app.test_request_context():
 if os.path.exists(os.path.join('_site', 'static')):
     shutil.rmtree(os.path.join('_site', 'static'))
 shutil.copytree('static', os.path.join('_site', 'static'))
+
+# Create a basic JavaScript file to ensure data is loaded correctly for GitHub Pages
+with open(os.path.join('_site', 'static', 'js', 'lecture-data.js'), 'w') as f:
+    f.write("""
+// This script loads data for the static site
+document.addEventListener('DOMContentLoaded', function() {
+    function initializePageData() {
+        // Already loaded by static site generation
+        console.log('Page data initialized');
+        
+        // Set platform badge if needed
+        const urlParts = window.location.pathname.split('/');
+        if (urlParts.length > 1 && urlParts[1]) {
+            const platformBadge = document.getElementById('platformBadge');
+            if (platformBadge) {
+                // Try to get the platform name based on the URL
+                const platformId = urlParts[1];
+                
+                // Set the badge text and make it visible
+                platformBadge.textContent = platformId.toUpperCase();
+                platformBadge.style.display = 'inline-block';
+            }
+        }
+        
+        // Remove loading spinner if it exists
+        const loader = document.getElementById('page-loader');
+        if (loader) {
+            loader.remove();
+        }
+    }
+    
+    // Initialize data when page loads
+    initializePageData();
+});
+""")
 
 # Copy data directory
 if os.path.exists(os.path.join('_site', 'data')):

@@ -8,10 +8,19 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
     
     try {
+        // Determine base path
+        let basePath = '';
+        if (window.location.hostname.includes('github.io')) {
+            const pathParts = window.location.pathname.split('/');
+            if (pathParts.length > 2) {
+                basePath = '/' + pathParts[1];
+            }
+        }
+        
         // Load each of the JSON data files
-        const platformsResponse = await fetch('/data/platforms.json');
-        const subjectsResponse = await fetch('/data/subjects.json');
-        const lecturesResponse = await fetch('/data/lectures.json');
+        const platformsResponse = await fetch(`${basePath}/data/platforms.json`);
+        const subjectsResponse = await fetch(`${basePath}/data/subjects.json`);
+        const lecturesResponse = await fetch(`${basePath}/data/lectures.json`);
         
         if (!platformsResponse.ok || !subjectsResponse.ok || !lecturesResponse.ok) {
             console.error('Error loading data files');
