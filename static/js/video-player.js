@@ -1,6 +1,24 @@
 // Video player functionality using Video.js
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Check if this is an external stream and handle watched status
+    const isExternalStream = document.querySelector('.video-container iframe');
+    if (isExternalStream) {
+        const lectureId = isExternalStream.closest('[data-lecture-id]')?.dataset.lectureId || 
+                         document.querySelector('.watched-badge')?.dataset.lectureId;
+        
+        if (lectureId) {
+            // Mark as watched after 10 seconds for external streams
+            setTimeout(() => {
+                localStorage.setItem(`video-watched-${lectureId}`, 'true');
+                const watchedBadge = document.querySelector(`.watched-badge[data-lecture-id="${lectureId}"]`);
+                if (watchedBadge) {
+                    watchedBadge.style.display = 'inline-block';
+                }
+            }, 10000);
+        }
+    }
+    
     // Initialize video.js player if video element exists
     const videoElement = document.getElementById('lecture-video');
     

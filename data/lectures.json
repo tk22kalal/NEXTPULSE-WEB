@@ -7,8 +7,10 @@
     "instructor": "Dr. Rajesh Kaushal",
     "instructor_avatar": "",
     "duration": "45 min",
-    "video_url": "https://example.com/videos/anatomy/brachial-plexus.mp4",
-    "thumbnail": ""
+    "video_url": "https://stream1.nextpulse.workers.dev/watch/183252/62.General+Microbiology.mp4?hash=AgADNR",
+    "thumbnail": "",
+    "is_external_stream": true,
+    "download_url": "https://stream1.nextpulse.workers.dev/watch/183252/62.General+Microbiology.mp4?hash=AgADNR"
   },
   {
     "id": "anat-002",

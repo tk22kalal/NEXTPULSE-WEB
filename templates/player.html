@@ -37,7 +37,12 @@
         <!-- Video Player -->
         <div class="card mb-4">
             <div class="card-body p-0">
-                <div class="video-container">
+                <div class="video-container" data-lecture-id="{{ lecture.id }}">
+                    {% if lecture.is_external_stream %}
+                    <div class="ratio ratio-16x9">
+                        <iframe src="{{ lecture.video_url }}" allowfullscreen class="rounded"></iframe>
+                    </div>
+                    {% else %}
                     <video 
                         id="lecture-video" 
                         class="video-js vjs-theme-custom vjs-big-play-centered"
@@ -52,6 +57,7 @@
                             web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
                         </p>
                     </video>
+                    {% endif %}
                 </div>
             </div>
             <div class="card-footer p-2">
@@ -78,6 +84,14 @@
                 </div>
                 <p>{{ lecture.description }}</p>
                 
+                {% if lecture.is_external_stream %}
+                <!-- Download Button for External Stream -->
+                <div class="mt-3">
+                    <a href="{{ lecture.download_url }}" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-download me-1"></i> Download Lecture
+                    </a>
+                </div>
+                {% else %}
                 <!-- Playback Speed Controls -->
                 <div class="mt-3">
                     <h6>Playback Speed:</h6>
@@ -113,6 +127,7 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
             </div>
         </div>
         
