@@ -18,7 +18,7 @@
     {% if request.url_rule %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     {% else %}
-        <link rel="stylesheet" href="/static/css/styles.css">
+        <link rel="stylesheet" href="static/css/styles.css">
     {% endif %}
 </head>
 <body>
@@ -95,7 +95,7 @@
     {% if request.url_rule %}
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% else %}
-        <script src="/static/js/script.js"></script>
+        <script src="static/js/script.js"></script>
     {% endif %}
     
     <!-- Additional JavaScript for specific pages -->
@@ -103,8 +103,8 @@
     
     {% if not request.url_rule %}
     <!-- GitHub Pages router script (only used in static deployment) -->
-    <script src="/static/js/lecture-data.js"></script>
-    <script src="/static/js/github-pages-router.js"></script>
+    <script src="static/js/lecture-data.js"></script>
+    <script src="static/js/github-pages-router.js"></script>
     {% endif %}
 </body>
 </html>

@@ -2,6 +2,22 @@
 // so this script helps handle client-side routing for a static site
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Fix base URL issues on GitHub Pages by checking if we're in a subdirectory
+    const baseElement = document.createElement('base');
+    let basePath = '';
+    
+    // If we're on GitHub Pages, the base path might be different
+    if (window.location.hostname.includes('github.io')) {
+        // Extract the repository name from the pathname
+        const pathParts = window.location.pathname.split('/');
+        if (pathParts.length > 2) {
+            basePath = '/' + pathParts[1] + '/';
+        }
+    }
+    
+    baseElement.href = basePath;
+    document.head.appendChild(baseElement);
+    
     // Convert all navigation links to use the router
     document.querySelectorAll('a[href^="/"]').forEach(function(link) {
         link.addEventListener('click', function(e) {
