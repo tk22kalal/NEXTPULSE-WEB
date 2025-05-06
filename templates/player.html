@@ -221,5 +221,9 @@
 <!-- Video.js -->
 <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
 <!-- Custom Video Player Script -->
-<script src="{{ url_for('static', filename='js/video-player.js') }}"></script>
+{% if request.url_rule %}
+    <script src="{{ url_for('static', filename='js/video-player.js') }}"></script>
+{% else %}
+    <script src="/static/js/video-player.js"></script>
+{% endif %}
 {% endblock %}
