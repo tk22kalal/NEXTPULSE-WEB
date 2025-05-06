@@ -1,6 +1,13 @@
 import os
 import json
 import shutil
+import sys
+
+# Add current directory to path for imports to work
+sys.path.append('.')
+
+# Import Flask and the app
+from flask import render_template
 from app import app
 
 # Create directory structure for static site
@@ -18,7 +25,6 @@ lectures = load_data('lectures.json')
 
 # Create index.html (platform selection)
 with app.test_request_context():
-    from flask import render_template
     
     # Generate platform selection page (index.html)
     index_html = render_template('index.html', 
