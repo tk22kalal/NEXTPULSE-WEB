@@ -1,82 +1,118 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found - NEET-PG Preparation</title>
     
-    <!-- Bootstrap 5 CSS from Replit -->
-    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="static/css/styles.css">
+    
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .error-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: bold;
+            color: #f8f9fa;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .btn-home {
+            transition: all 0.3s;
+        }
+        .btn-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+    
+    <script>
+        // This script helps redirect to the correct page on GitHub Pages
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the current path
+            const path = window.location.pathname;
+            
+            // If we're on GitHub Pages, try to determine the repo name
+            if (window.location.hostname.includes('github.io')) {
+                const pathParts = path.split('/');
+                if (pathParts.length > 1) {
+                    const repoName = pathParts[1];
+                    
+                    // Update the home button to include the repo name
+                    const homeBtn = document.getElementById('home-btn');
+                    if (homeBtn) {
+                        homeBtn.href = '/' + repoName + '/';
+                    }
+                    
+                    // Try to analyze the requested path to provide a better message
+                    const pathDisplay = document.getElementById('path-display');
+                    if (pathDisplay) {
+                        pathDisplay.textContent = path;
+                    }
+                    
+                    // Update the hash fallback link
+                    const hashLink = document.getElementById('hash-link');
+                    if (hashLink) {
+                        // Convert the path to a hash path
+                        const hashPath = '#' + path.substring(repoName.length + 1);
+                        hashLink.href = '/' + repoName + '/' + hashPath;
+                        hashLink.style.display = 'inline-block';
+                    }
+                }
+            }
+        });
+    </script>
 </head>
-<body>
-    <!-- Navigation -->
+<body class="bg-dark text-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <i class="fas fa-stethoscope me-2"></i>NEET-PG Prep
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            <i class="fas fa-home me-1"></i> Home
-                        </a>
-                    </li>
-                </ul>
-                <div class="d-flex align-items-center">
-                    <button onclick="toggleDarkMode()" class="btn btn-outline-light btn-sm" title="Toggle Dark/Light Mode">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </div>
-            </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="container my-4">
-        <div class="text-center py-5">
-            <div class="display-1 text-muted mb-4">
-                <i class="fas fa-exclamation-triangle"></i> 404
-            </div>
-            <h1 class="display-4 mb-4">Page Not Found</h1>
-            <p class="lead mb-5">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
-            
+    <div class="error-container">
+        <div class="container text-center py-5">
+            <div class="error-code mb-4">404</div>
+            <h1 class="display-5 mb-4">Page Not Found</h1>
+            <p class="lead mb-4">The page you are looking for doesn't exist or has been moved.</p>
             <div class="mb-4">
-                <img src="https://via.placeholder.com/600x400?text=404+Not+Found" alt="404 Not Found" class="img-fluid rounded" style="max-width: 400px;">
+                <code id="path-display" class="bg-dark text-light p-2 rounded">Unknown path</code>
             </div>
-            
-            <a href="/" class="btn btn-primary btn-lg">
-                <i class="fas fa-home me-2"></i> Go to Homepage
-            </a>
+            <div class="mt-5">
+                <a id="home-btn" href="/" class="btn btn-outline-light btn-lg me-3 btn-home">
+                    <i class="fas fa-home me-2"></i> Go Home
+                </a>
+                <a id="hash-link" href="#" class="btn btn-outline-primary btn-lg btn-home" style="display: none;">
+                    <i class="fas fa-hashtag me-2"></i> Try Hash Navigation
+                </a>
+            </div>
         </div>
-    </main>
+    </div>
 
-    <!-- Footer -->
-    <footer class="text-center text-muted">
+    <footer class="text-center py-4">
         <div class="container">
-            <p>&copy; 2023 NEET-PG Preparation Platform</p>
-            <p class="small">A comprehensive learning platform for medical students</p>
+            <p class="small text-muted mb-0">&copy; 2023 NEET-PG Preparation Platform</p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JavaScript -->
-    <script src="static/js/script.js"></script>
-    
-    <!-- GitHub Pages scripts -->
-    <script src="static/js/lecture-data.js"></script>
-    <script src="static/js/github-pages-router.js"></script>
 </body>
 </html>
